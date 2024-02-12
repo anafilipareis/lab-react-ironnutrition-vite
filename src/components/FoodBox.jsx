@@ -5,7 +5,7 @@ function FoodBox({food}){
         <div>
             <p>{food.name}</p>
 
-            <img src={food.image} />
+            <img src={food.image} style={{ maxWidth: '300px', maxHeight: '300px' }}/>
 
             <p>Calories: {food.calories}</p>
             <p>Servings {food.servings}</p>
