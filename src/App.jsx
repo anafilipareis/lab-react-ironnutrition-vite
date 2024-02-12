@@ -7,6 +7,7 @@ import FoodBox from "./components/FoodBox";
 
 function App() {
  const [foods, setFoods] = useState(foodsJson);
+ 
 
  const deleteFood = foodId => {
   const filteredFoods = foods.filter(food => {
@@ -22,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <h1>LAB | React IronNutrition</h1>
-      {foods.map((food, index) => (
-      <FoodBox key={index} food={food} onDelete={deleteFood} />
+      {foods.map((food) => (
+      <FoodBox key={food.id} food={food} onDelete={deleteFood} />
       // pass the deleteFood function as a prop to the FoodBox component
     ))}    
     </div>
