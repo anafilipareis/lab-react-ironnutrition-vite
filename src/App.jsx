@@ -6,7 +6,14 @@ import FoodBox from "./components/FoodBox";
 
 
 function App() {
- const [foods, setFoods] = useState(foodsJson)
+ const [foods, setFoods] = useState(foodsJson);
+
+ const deleteFood = foodId => {
+  const filteredFoods = foods.filter(food => {
+    return food.id !== foodId;
+  });
+  setFoods(filteredFoods);
+ };
 
 //  useState declares a "state variable" called foods in this case.
 // The only argument we pass to the useState() hook is the initial state
@@ -16,8 +23,9 @@ function App() {
     <div className="App">
       <h1>LAB | React IronNutrition</h1>
       {foods.map((food, index) => (
-      <FoodBox key={index} food={food} />
-    ))}
+      <FoodBox key={index} food={food} onDelete={deleteFood} />
+      // pass the deleteFood function as a prop to the FoodBox component
+    ))}    
     </div>
   );
 }
