@@ -15,15 +15,14 @@ function App() {
   return (
     <div className="App">
       <h1>LAB | React IronNutrition</h1>
-      <FoodBox food={ {
-      name: "Orange",
-      calories: 85,
-      image: "https://i.imgur.com/abKGOcv.jpg",
-      servings: 1
-    } } 
-    />
+      {foods.map((food, index) => (
+      <FoodBox key={index} food={food} />
+    ))}
     </div>
   );
 }
 
 export default App;
+
+// foods - the array of food items
+// (<FoodBox key={index} food={food} /> - The callback function creates a new FoodBox component for each food item in the array, passing the food object as prop
