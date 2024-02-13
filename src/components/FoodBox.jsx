@@ -1,7 +1,7 @@
 // Your code here
 
 
-function FoodBox({food}){
+function FoodBox({food, onDelete}){
     return (
         <div>
             <p>{food.name}</p>
